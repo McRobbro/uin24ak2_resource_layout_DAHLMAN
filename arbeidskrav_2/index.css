@@ -1,0 +1,17 @@
+:root {
+    --primary-color: #2A324B;
+    --secondary-color: #58699D;
+    --background-color: #fff;
+  }
+
+  body {
+    background-color: var(--primary-color);
+  }
+
+  section {
+    background-color: var(--background-color);
+  }
+
+  ul {
+    list-style: none;
+  }
