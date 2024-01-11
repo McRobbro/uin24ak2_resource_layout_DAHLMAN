@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #2A324B;
+    --secondary-color: #58699D;
+    --background-color: #fff;
+  }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+  }
+
+  section {
+    background-color: var(--secondary-color);
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  li {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 1rem 2rem;
+  }
+
+  li:active {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+  }
