@@ -1,7 +1,7 @@
 :root {
-    --primary-color: #2A324B;
-    --secondary-color: #58699D;
-    --background-color: #fff;
+    --primary-color: #2b324b;
+    --background-color: #e1e5ee;
+    --section-color: #fff;
   }
 
   body {
@@ -11,21 +11,37 @@
   }
 
   section {
-    background-color: var(--secondary-color);
+    margin: 3rem auto;
+    width: 65%;
+    background-color: var(--section-color);
   }
 
-  ul {
+  #menu {
+    width: 100%;
     list-style: none;
     display: flex;
+    justify-content: space-between;
+    background-color: var(--background-color);
+    font-weight: 700;
+
+    margin: 0;
+    padding: 0;
   }
   
-  li {
+  #menu li {
     background-color: var(--primary-color);
     color: var(--background-color);
-    padding: 1rem 2rem;
+    padding: 1.25rem 3rem;
+    font-size: 1.5rem;
   }
 
-  li:active {
-    background-color: var(--background-color);
+  #menu li.active {
+    background-color: var(--section-color);
     color: var(--primary-color);
+  }
+
+  article {
+    background-color: var(--section-color);
+    padding: 0rem 2rem 2rem 2rem;
+    margin: 2rem;
   }

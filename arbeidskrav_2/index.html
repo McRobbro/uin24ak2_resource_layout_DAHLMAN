@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Your Page Title</title>
+    <title>UIN24AK2-Dahlman</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
@@ -12,16 +12,52 @@
 <body>
     <section>
         <ul id="menu">
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>React</li>
-            <li>Sanity and headless CMS</li>
+            <li id="0"></li>
+            <li id="1"></li>
+            <li id="2"></li>
+            <li id="3"></li>
+            <li id="4"></li>
         </ul>
-        <article>
-            <p>title: "W3Schools"</p>
-            <p>url: "https://www.w3schools.com/html/"</p>
+        <article id="content">
         </article>
     </section>
 </body>
+
+<script src="ressurser.js"></script>
+<script>
+
+    document.querySelectorAll("#menu li").forEach((li, index) => {
+        li.textContent = resources[index].category;
+        li.addEventListener("click", () => {
+            displayContent(index);
+        })
+    
+    });
+
+    function displayContent(index) {
+        const resource = resources[index];
+        const content = document.getElementById("content");
+        content.innerHTML = 
+        `
+        <h2>${resource.category}</h2>
+        <p>${resource.text}</p>
+        <ul>${resource.sources.map(source =>
+            `
+            <li><a href="${source.url}">${source.title}</a></li>
+            `
+            ).join("")}
+        </ul>
+        `;
+
+        document.querySelectorAll("#menu li").forEach(item => {
+                item.classList.remove("active");
+            });
+
+        document.getElementById(index).classList.add("active");
+    }
+
+    displayContent(0)
+
+</script>
+
 </html>
